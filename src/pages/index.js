@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import Layout from "../components/Layout"
 import * as styles from "../styles/home.module.css"
+import { StaticImage } from "gatsby-plugin-image"
 
 export default function Home() {
   return (
@@ -15,8 +16,22 @@ export default function Home() {
             My Portfolio Projects
           </Link>
         </div>
-        <img src="/banner.png" alt="site banner" style={{ maxWidth: "100%" }} />
+        <StaticImage src="../images/banner.png" alt="Banner" />
       </section>
     </Layout>
   )
 }
+
+// export const query = graphql`
+//   query MyQuery {
+//     file(relativePath: { eq: "banner.png" }) {
+//       childImageSharp {
+//         gatsbyImageData(
+//           layout: FULL_WIDTH
+//           placeholder: BLURRED
+//           formats: [AUTO, WEBP]
+//         )
+//       }
+//     }
+//   }
+// `
